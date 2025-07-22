@@ -43,6 +43,10 @@ class StreamPlatformTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     #homework - put and delete request
+    # del 403 req 0- permissionss set
+    # def test_streamplatform_del(self):
+    #     response = self.client.delete(reverse('streamplatform-detail', args=(self.stream.id, )))
+    #     self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
 
 class WatchlistTestCase(APITestCase):
@@ -57,6 +61,7 @@ class WatchlistTestCase(APITestCase):
                                                         about="#1 ott platform", 
                                                         website="https://netflix.com"
                                                         )
+        
         self.watchlist = models.WatchList.objects.create(platform=self.stream,
                                                         title="Example Movie",
                                                         storyline="Example Story",
@@ -73,8 +78,6 @@ class WatchlistTestCase(APITestCase):
         response = self.client.post(reverse('movie-list'), data)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
-        #put and delete - homework
-
     def test_watchlist_list(self):
         response=self.client.get(reverse("movie-list"))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -84,6 +87,23 @@ class WatchlistTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(models.WatchList.objects.count(), 1)
         self.assertEqual(models.WatchList.objects.get().title, "Example Movie")
+
+    #put and delete - homework
+    # def test_watchlist_update(self):
+    #     # updated data
+    #     data={
+    #         "platform": self.stream,
+    #         "title": "Example Movie-updated",
+    #         "storyline": "Example Story-updated",
+    #         "is_active": False
+    #     }
+    #     response = self.client.put(reverse("movie-detail", args=(self.watchlist.id, )), data)
+    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_watchlist_del(self):
+        response = self.client.delete(reverse('movie-detail', args=(self.watchlist.id, )))
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
 
 class ReviewTestCase(APITestCase):
 
@@ -105,7 +125,7 @@ class ReviewTestCase(APITestCase):
                                                         storyline="Example Story",
                                                         is_active=True
                                                         )
-        #fore review put request
+        #before review put request
         self.watchlist2 = models.WatchList.objects.create(platform=self.stream,
                                                         title="Example Movie",
                                                         storyline="Example Story",
@@ -172,9 +192,11 @@ class ReviewTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     #HW - delete request check
-
+    def test_review_del(self):
+        response = self.client.delete(reverse('review-detail', args=(self.review.id, )))
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_review_user(self):
-        response = self.client.get('/watch/reviews/?username' + self.user.username)
+        response = self.client.get('/api/watch/user-reviews/?username=' + self.user.username)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 

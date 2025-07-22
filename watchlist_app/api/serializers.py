@@ -20,7 +20,6 @@ class WatchListSerializer(serializers.ModelSerializer):
 
     #overriding platform - so that instead of id in list-name should be visible not id.
     platform = serializers.CharField(source='platform.name')
-    
     class Meta:
         model = WatchList
         fields = '__all__'
