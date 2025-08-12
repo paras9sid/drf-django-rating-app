@@ -19,7 +19,7 @@ class WatchListSerializer(serializers.ModelSerializer):
     reviews = ReviewSerializer(many=True, read_only=True)
 
     #overriding platform - so that instead of id in list-name should be visible not id.
-    platform = serializers.CharField(source='platform.name')
+    # platform = serializers.CharField(source='platform.name', read_only=True)
     class Meta:
         model = WatchList
         fields = '__all__'

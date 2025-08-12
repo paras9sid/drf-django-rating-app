@@ -76,9 +76,8 @@ class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 ###################### StreamPlatform Views #########################
-
-#read only only get req
-class StreamPlatformVS(viewsets.ReadOnlyModelViewSet):
+# all in one modelviewset
+class StreamPlatformVS(viewsets.ModelViewSet):
     queryset = StreamPlatform.objects.all()
     serializer_class = serializers.StreamPlatformSerializer
     permission_classes = [permissions.IsAdminOrReadOnly]
@@ -103,7 +102,7 @@ class WatchListAV(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class WatchDetailAV(APIView):
-    # permission_classes = [permissions.IsAdminOrReadOnly]
+    permission_classes = [permissions.IsAdminOrReadOnly]
     throttle_classes = [AnonRateThrottle]
 
     def get(self, request, pk):

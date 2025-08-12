@@ -42,12 +42,6 @@ class StreamPlatformTestCase(APITestCase):
         response = self.client.get(reverse('streamplatform-detail', args=(self.stream.id,)))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    #homework - put and delete request
-    # del 403 req 0- permissionss set
-    # def test_streamplatform_del(self):
-    #     response = self.client.delete(reverse('streamplatform-detail', args=(self.stream.id, )))
-    #     self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-
 
 class WatchlistTestCase(APITestCase):
 
@@ -87,22 +81,6 @@ class WatchlistTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(models.WatchList.objects.count(), 1)
         self.assertEqual(models.WatchList.objects.get().title, "Example Movie")
-
-    #put and delete - homework
-    # def test_watchlist_update(self):
-    #     # updated data
-    #     data={
-    #         "platform": self.stream,
-    #         "title": "Example Movie-updated",
-    #         "storyline": "Example Story-updated",
-    #         "is_active": False
-    #     }
-    #     response = self.client.put(reverse("movie-detail", args=(self.watchlist.id, )), data)
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
-
-    def test_watchlist_del(self):
-        response = self.client.delete(reverse('movie-detail', args=(self.watchlist.id, )))
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
 
 class ReviewTestCase(APITestCase):
