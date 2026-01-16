@@ -1,6 +1,15 @@
 IMDB API Clone With DRF
 🔗 Final Project Links (Arranged According To Usage)
 
+Stack - 
+Backend - python, Django, Django Rest Framework
+
+#Deployed - www.pythonanywhere.com
+
+1. Watch - https://siddharth108.pythonanywhere.com/api/watch/
+
+
+# Local Machine
 1. Admin Access
 
     Admin Section: http://127.0.0.1:8000/dashboard/
