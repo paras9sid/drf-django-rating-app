@@ -26,7 +26,8 @@ class UserReview(generics.ListAPIView):
 class ReviewCreate(generics.CreateAPIView):
 
     serializer_class = serializers.ReviewSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
+    permission_classes = [permissions.IsAdminOrReadOnly]
     throttle_classes = [throttling.ReviewCreateThrottle]
 
     def get_queryset(self):
@@ -36,7 +37,7 @@ class ReviewCreate(generics.CreateAPIView):
     def perform_create(self, serializer):
         pk = self.kwargs['pk']
         watchlist = WatchList.objects.get(pk=pk)
-
+        
         review_user = self.request.user
         review_queryset = Review.objects.filter(watchlist=watchlist, review_user=review_user)
 
