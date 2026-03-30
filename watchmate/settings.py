@@ -80,38 +80,43 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "watchmate.wsgi.application"
 
+DB_LIVE=env('DB_LIVE')
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+if DB_LIVE in ["False",False]:
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    # Database
+    # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
+    
+else:
 
-'''
-# PostgreSql
+    #############################
+    # PostgreSql
 
-DATABASES = {
+    DATABASES = {
 
-    'default': {
+        'default': {
 
-        'ENGINE': 'django.db.backends.postgresql',
+            'ENGINE': 'django.db.backends.postgresql',
 
-        'NAME': env('DB_NAME'),
+            'NAME': env('DB_NAME'),
 
-        'USER': env('DB_USER'),
+            'USER': env('DB_USER'),
 
-        'PASSWORD': env('DB_PASSWORD'),
+            'PASSWORD': env('DB_PASSWORD'),
 
-        'HOST': env('DB_HOST'),
+            'HOST': env('DB_HOST'),
 
-        'PORT': '',
+            'PORT': env('DB_PORT'),
+        }
     }
-}
-'''
+
 
 
 # Password validation
