@@ -32,7 +32,11 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['drf-django-rating-app-production.up.railway.app', '*']
+
+CSRF_TRUSTED_ORIGINS = ['https://drf-django-rating-app-production.up.railway.app/']
+
+# https://drf-django-rating-app-production.up.railway.app/api/watch
 
 # Application definition
 
@@ -80,42 +84,42 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "watchmate.wsgi.application"
 
-DB_LIVE=env('DB_LIVE')
+# DB_LIVE=env('DB_LIVE')
 
-if DB_LIVE in ["False",False]:
+# if DB_LIVE in ["False",False]:
 
-    # Database
-    # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+#     # Database
+#     # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.sqlite3",
+#             "NAME": BASE_DIR / "db.sqlite3",
+#         }
+#     }
     
-else:
+# else:
 
     #############################
     # PostgreSql
 
-    DATABASES = {
+DATABASES = {
 
-        'default': {
+    'default': {
 
-            'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql',
 
-            'NAME': env('DB_NAME'),
+        'NAME': env('DB_NAME'),
 
-            'USER': env('DB_USER'),
+        'USER': env('DB_USER'),
 
-            'PASSWORD': env('DB_PASSWORD'),
+        'PASSWORD': env('DB_PASSWORD'),
 
-            'HOST': env('DB_HOST'),
+        'HOST': env('DB_HOST'),
 
-            'PORT': env('DB_PORT'),
-        }
+        'PORT': env('DB_PORT'),
     }
+}
 
 
 
