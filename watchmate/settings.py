@@ -14,6 +14,11 @@ from pathlib import Path
 from datetime import timedelta
 from decouple import config
 
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,14 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY='django-insecure-dg3e*grlz$a@-#s4s^s@d)4#d*!)rzju9%h$0njzh#gu_nh)xv'
+SECRET_KEY = env('SECRET_KEY') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -87,6 +90,28 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+'''
+# PostgreSql
+
+DATABASES = {
+
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': env('DB_NAME'),
+
+        'USER': env('DB_USER'),
+
+        'PASSWORD': env('DB_PASSWORD'),
+
+        'HOST': env('DB_HOST'),
+
+        'PORT': '',
+    }
+}
+'''
 
 
 # Password validation
