@@ -216,6 +216,13 @@ REST_FRAMEWORK = {
 }
 
 # NEW REFRESH TOKEN-WITH NEW ACCESS TOKEN - JWT
-SIMPLE_JWT = {
-    'ROTATE_REFRESH_TOKENS': True,
+# SIMPLE_JWT = {
+#     'ROTATE_REFRESH_TOKENS': True,
+# }
+
+#Swagger ui auth buttons disable.
+
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,   # removes Django login
+    'SECURITY_DEFINITIONS': None,  # removes Authorize button
 }
