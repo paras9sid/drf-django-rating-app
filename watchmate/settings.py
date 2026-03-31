@@ -32,11 +32,18 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
+# Railway generted domain
+
 ALLOWED_HOSTS = ['drf-django-rating-app-production.up.railway.app', '*']
 
 CSRF_TRUSTED_ORIGINS = ['https://drf-django-rating-app-production.up.railway.app/']
 
 # https://drf-django-rating-app-production.up.railway.app/api/watch
+
+#Go daddy oamin
+# ALLOWED_HOSTS = ['drf-django-rating-app-production.up.railway.app', '*']
+
+# CSRF_TRUSTED_ORIGINS = ['https://drf-django-rating-app-production.up.railway.app/']
 
 # Application definition
 
