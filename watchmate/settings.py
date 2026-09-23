@@ -34,9 +34,9 @@ DEBUG = env('DEBUG')
 
 # Railway generted domain
 
-ALLOWED_HOSTS = ['drf-django-rating-app-production.up.railway.app', '*']
+ALLOWED_HOSTS = ['drf-django-rating-app-production-e917.up.railway.app', '*']
 
-CSRF_TRUSTED_ORIGINS = ['https://drf-django-rating-app-production.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://drf-django-rating-app-production-e917.up.railway.app/']
 
 # https://drf-django-rating-app-production.up.railway.app/api/watch
 
