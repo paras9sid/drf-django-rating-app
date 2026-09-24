@@ -230,6 +230,6 @@ REST_FRAMEWORK = {
 #Swagger ui auth buttons disable.
 
 SWAGGER_SETTINGS = {
-    'USE_SESSION_AUTH': False,   # removes Django login
+    'USE_SESSION_AUTH': True,   # removes Django login
     'SECURITY_DEFINITIONS': None,  # removes Authorize button
 }
