@@ -39,23 +39,23 @@ Home - https://www.djangoapi.online
 
 5. Stream Platforms
 
-    Create Element & Access List: http://127.0.0.1:8000/api/watch/stream/
+    Create Element & Access List: https://www.djangoapi.online/api/watch/stream/
 
-    <img width="1280" height="979" alt="all_streams" src="https://github.com/user-attachments/assets/ec3593d8-7286-4486-a9b0-ed6cc83e5824" />
+    <img width="1280" height="984" alt="all_stream" src="https://github.com/user-attachments/assets/4689fa79-63c6-4f9f-8315-fc3058318b08" />
 
-    Access, Update & Destroy Individual Element: http://127.0.0.1:8000/api/watch/stream/<int:streamplatform_id>/
+    Access, Update & Destroy Individual Element: https://www.djangoapi.online/api/watch/stream/<int:streamplatform_id>/
 
-    <img width="1280" height="979" alt="stream_by_id" src="https://github.com/user-attachments/assets/0519c70d-9078-4772-b443-9a20e48ceb9b" />
+    <img width="1280" height="984" alt="stream_by_id" src="https://github.com/user-attachments/assets/3aa2b096-ebfb-446b-b3a6-5a02aa840f7b" />
 
 7. Watch List
 
-    Create & Access List: http://127.0.0.1:8000/api/watch/
+    Create & Access List: https://www.djangoapi.online/api/watch/
 
-    <img width="1280" height="983" alt="watchlist_all" src="https://github.com/user-attachments/assets/94c7a472-94d8-49f6-b5cc-9d227a6ab226" />
+    <img width="1280" height="984" alt="all_watchlist" src="https://github.com/user-attachments/assets/42398433-6812-485e-ae9c-cbfe99158233" />
 
-    Access, Update & Destroy Individual Element: http://127.0.0.1:8000/api/watch/<int:movie_id>/
+    Access, Update & Destroy Individual Element: https://www.djangoapi.online/api/watch/<int:movie_id>/
 
-    <img width="1280" height="983" alt="watchlist_by_id" src="https://github.com/user-attachments/assets/7b6d1a5e-5e82-4085-8990-79b3bf568b56" />
+    <img width="1280" height="984" alt="watchlist_by_id" src="https://github.com/user-attachments/assets/b40dfcad-1b05-4449-b0ac-b06333947007" />
 
 9. Reviews
 
