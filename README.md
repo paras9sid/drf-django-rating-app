@@ -4,9 +4,11 @@ IMDB API Clone With DRF
 Stack - 
 Backend - python, Django, Django Rest Framework
 
-#Deployed - www.pythonanywhere.com
+#Deployed - Railway Cloud
 
-1. Watch - https://siddharth108.pythonanywhere.com/api/watch/
+1. Watch - https://www.djangoapi.online/api/watch/stream/
+
+<img width="1280" height="987" alt="Django_drf_api" src="https://github.com/user-attachments/assets/21abdf18-e482-4928-889a-136e3f00a352" />
 
 
 #Local Machine Endpoints - download zip and extract or clone the repository.
